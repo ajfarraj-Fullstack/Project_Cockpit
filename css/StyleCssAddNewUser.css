@@ -1,0 +1,87 @@
+body{
+   background: #f4f7fb;
+    font-family: "Poppins", sans-serif;
+    direction: rtl;
+    max-width: 1800px;
+    margin:0 auto ;
+}
+
+/* Layout */
+.page{
+  max-width:420px;
+  margin:80px auto;
+}
+
+/* Title */
+h4{
+  text-align:center;
+  margin-bottom:30px;
+  color:#063858;
+  font-weight:600;
+}
+
+/* Form */
+.form-field{
+  margin-bottom:22px;
+}
+
+.form-field label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:500;
+}
+
+/* Input wrapper */
+.input-wrapper{
+  position:relative;
+}
+
+/* Right icon (field icon) */
+.input-icon{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#6c757d;
+  pointer-events:none;
+}
+
+/* Left icon (dropdown arrow) */
+.select-icon{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#6c757d;
+  pointer-events:none;
+}
+
+/* Inputs */
+.form-control,
+.form-select{
+  height:48px;
+  border-radius:8px;
+  padding-right:44px;
+}
+
+/* Remove default select arrow */
+.form-select{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image:none;
+  padding-left:44px;
+}
+
+/* Button */
+.btn-save{
+  height:48px;
+  border-radius:8px;
+  background:#063858;
+  color:#fff;
+  border:none;
+}
+
+.btn-save:hover{
+  background:#052c46;
+}

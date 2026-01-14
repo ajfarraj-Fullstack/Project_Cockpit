@@ -1,0 +1,110 @@
+ body {
+    background: #f4f7fb;
+    font-family: "Poppins", sans-serif;
+    direction: rtl;
+    max-width: 1800px;
+    margin:0 auto ;
+  }
+
+  .table thead th {
+    background: #063858;
+    color: white;
+    text-align: center;
+  }
+
+  .table tbody td {
+    vertical-align: middle;
+  }
+
+  .form-select-sm {
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #0E79BE, #063858);
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-danger {
+    background: #e63946;
+    border: none;
+    font-weight: 600;
+  }
+
+  .btn-danger:hover {
+    opacity: 0.9;
+  }
+
+  .btn-outline-info {
+    border-color: #0E79BE;
+    color: #0E79BE;
+  }
+
+  .btn-outline-info:hover {
+    background: #0E79BE;
+    color: white;
+  }
+
+  .modal-content {
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  select.form-select option {
+    color: black;
+  }
+
+  /* Status colors */
+  .status-pending {
+    background: #FFC107 !important;
+    color: white;
+  }
+
+  .status-inprogress {
+    background: #17A2B8 !important;
+    color: white;
+  }
+
+  .status-closed {
+    background: #28A745 !important;
+    color: white;
+  }
+
+  .status-review {
+    background: #6C757D !important;
+    color: white;
+  }
+
+  .status-approved {
+    background: #28A745 !important;
+    color: white;
+  }
+
+  .status-rejected {
+    background: #DC3545 !important;
+    color: white;
+  }
+
+  /* Hover effect on rows */
+  .table-hover tbody tr:hover {
+    background-color: #eaf0f8;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 992px) {
+    .table-responsive {
+      font-size: 0.85rem;
+    }
+
+    .btn-sm {
+      font-size: 0.75rem;
+      padding: 2px 6px;
+    }
+  }

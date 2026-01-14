@@ -1,0 +1,67 @@
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f4f7fb;
+  font-family:"Poppins",sans-serif;
+}
+
+/* صندوق هادئ */
+.card-login{
+  width: 520px;
+  padding: 48px;
+  border-radius: 16px;
+  background:#ffffff;
+  border:1px solid #e4e9f2;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+/* عنوان بسيط */
+.title{
+  text-align:center;
+  font-weight:700;
+  color:#063858;
+  margin-bottom:4px;
+}
+
+.sub{
+  text-align:center;
+  font-size:13px;
+  color:#0E79BE;
+  margin-bottom:18px;
+}
+
+/* آيكونات داخل الإدخال */
+.input-group-text{
+  background:#e9f3fb;
+  color:#063858;
+  border:none;
+}
+
+.form-control{
+  border:none;
+  background:#f1f6fc;
+   height: 45px;          
+  font-size: 16px;      
+  padding-left: 12px;
+}
+
+.form-control:focus{
+  box-shadow:none;
+  background:#e9f3fb;
+}
+
+/* زر هادئ أزرق */
+.btn-blue{
+  background: linear-gradient(135deg, #0E79BE, #063858);
+  border:none;
+  color:white;
+  font-weight:600;
+     height:45px;          
+
+}
+
+.btn-blue:hover{
+  opacity:.9;
+}
