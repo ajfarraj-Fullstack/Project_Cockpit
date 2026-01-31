@@ -1,5 +1,4 @@
 <?php include "ViewNavbar.php" ?>
-
 <div class="container mt-4">
 
   <!-- زر إضافة تقرير -->
@@ -10,154 +9,90 @@
   </div>
 
   <!-- جدول التقارير -->
-  <table class="table table-bordered text-center align-middle">
+  <table id="example" class="table table-bordered text-center align-middle display">
     <thead class="table-light">
       <tr>
         <th>#</th>
-        <th>اسم الملف</th>
         <th>القيمة</th>
+        <th>اسم التقرير</th>
+        <th>ملخص التقرير</th>
         <th>الاجرات</th>
-
       </tr>
     </thead>
-
     <tbody>
 
-      <!-- صف 1 -->
-      <tr>
-        <td>1</td>
-        <td>تقرير الأعمال</td>
-        <td>1500</td>
+      <?php if ($resultone && mysqli_num_rows($resultone) > 0) { ?>
+        <?php foreach ($resultone as $rowResultRowReport) { ?>
+          <tr>
+            <td><?= $rowResultRowReport['report_id']; ?></td>
+            <td><?= $rowResultRowReport['value']; ?></td>
+            <td><?= $rowResultRowReport['nameReport']; ?></td>
+            <td><?= $rowResultRowReport['summary']; ?></td>
+            <td>
+              <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewFile1">
+                عرض
+              </button>
+              <a href="#" class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                data-bs-target="#edit<?= $rowResultRowReport['report_id'] ?>">
+                تعديل
+              </a>
 
-        <td>
-          <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewFile1">
-            عرض
-          </button>
-
-
-
-          <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#edit1">
-            تعديل
-          </button>
-
-
-
-          <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete1">
-            حذف
-          </button>
-        </td>
-      </tr>
-
-      <!-- صف 2 -->
-      <tr>
-        <td>2</td>
-        <td>تقرير مالي</td>
-        <td>2300</td>
-
-        <td>
-          <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewFile2">
-            عرض
-          </button>
-
-
-
-          <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#edit2">
-            تعديل
-          </button>
-
-
-
-          <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete2">
-            حذف
-          </button>
-        </td>
-      </tr>
-
+              <a href="?delete_report=<?= $rowResultRowReport['report_id'] ?>" class="btn btn-danger btn-sm">
+                حذف
+              </a>
+            </td>
+          </tr>
+        <?php } ?>
+      <?php } ?>
     </tbody>
   </table>
 </div>
-
-
-
-
-
 
 <!-- ---------------- عرض ملف صف 1 ---------------- -->
 <div class="modal fade" id="viewFile1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content p-3 text-center">
       <h5>عرض الملف</h5>
-      <p>سيتم فتح الملف هنا</p>
+      <a href="<?php echo $rowResultRowReport['path_file']; ?>"><?php echo $rowResultRowReport['path_file']; ?></a>
     </div>
   </div>
 </div>
-
-<!-- ---------------- عرض ملف صف 2 ---------------- -->
-<div class="modal fade" id="viewFile2">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content p-3 text-center">
-      <h5>عرض الملف</h5>
-      <p>سيتم فتح الملف هنا</p>
-    </div>
-  </div>
-</div>
-
 
 
 <!-- ---------------- تعديل صف 1 ---------------- -->
-<div class="modal fade" id="edit1">
+<div class="modal fade" id="edit<?= $rowResultRowReport['report_id'] ?>" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content p-3">
-      <h5 class="text-center">تعديل التقرير</h5>
 
-      <label>اسم الملف</label>
-      <input type="text" class="form-control mb-2" value="تقرير الأعمال">
+      <h5 class="text-center mb-3">تعديل التقرير</h5>
 
-      <label>القيمة</label>
-      <input type="number" class="form-control mb-2" value="1500">
+      <form method="POST" enctype="multipart/form-data">
 
-      <button class="btn btn-primary w-100">حفظ</button>
+        <input type="hidden" name="report_id"
+               value="<?= $rowResultRowReport['report_id'] ?>">
+
+        <label>اسم التقرير</label>
+        <input type="text" name="nameReport"
+               class="form-control mb-2"
+               value="<?= $rowResultRowReport['nameReport'] ?>" required>
+
+        <label>القيمة</label>
+        <input type="number" name="value"
+               class="form-control mb-2"
+               value="<?= $rowResultRowReport['value'] ?>" required>
+
+        <label>الملخص</label>
+        <textarea name="summary"
+                  class="form-control mb-2"><?= $rowResultRowReport['summary'] ?></textarea>
+
+        <button type="submit" name="update_report"
+                class="btn btn-primary w-100">
+          حفظ
+        </button>
+      </form>
+
     </div>
   </div>
 </div>
 
-<!-- ---------------- تعديل صف 2 ---------------- -->
-<div class="modal fade" id="edit2">
-  <div class="modal-dialog">
-    <div class="modal-content p-3">
-      <h5 class="text-center">تعديل التقرير</h5>
-
-      <label>اسم الملف</label>
-      <input type="text" class="form-control mb-2" value="تقرير مالي">
-
-      <label>القيمة</label>
-      <input type="number" class="form-control mb-2" value="2300">
-
-      <button class="btn btn-primary w-100">حفظ</button>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- ---------------- حذف صف 1 ---------------- -->
-<div class="modal fade" id="delete1">
-  <div class="modal-dialog">
-    <div class="modal-content p-3 text-center">
-      <h5>هل تريد حذف التقرير؟</h5>
-      <button class="btn btn-secondary mb-3" data-bs-dismiss="modal">إلغاء</button>
-      <button class="btn btn-danger">حذف</button>
-    </div>
-  </div>
-</div>
-
-<!-- ---------------- حذف صف 2 ---------------- -->
-<div class="modal fade" id="delete2">
-  <div class="modal-dialog">
-    <div class="modal-content p-3 text-center">
-      <h5>هل تريد حذف التقرير؟</h5>
-      <button class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
-      <button class="btn btn-danger">حذف</button>
-    </div>
-  </div>
-</div>
+<script src="js/jsFilter.js"></script>

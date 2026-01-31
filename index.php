@@ -1,3 +1,29 @@
+<?php 
+// file  config
+session_start();
+
+if (isset($_SESSION['user_id'], $_SESSION['role'])) {
+
+    if ($_SESSION['role'] === "admin") {
+        header("Location: dashbord.php");
+        exit;
+    }
+
+    if ($_SESSION['role'] === "user") {
+        header("Location: reportemployee.php"); // أو replotemployee.php حسب اسم الملف الحقيقي
+        exit;
+    }
+
+}
+
+// إذا ما في جلسة → خلي المستخدم يكمل صفحة تسجيل الدخول
+
+include "include/config.php"; 
+// file  login Controller
+include "controller/loginController.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +33,11 @@
   <title>Login</title>
 </head>
 <body>
-   <?php // include "view/ViewLogin.php" ?>
-    <?php //include "view/ViewDashbord.php" ?> 
-    <?php  include "view/ViewTableForEmployee.php" ?>
-    <?php // include "view/ViewAddNewUser.php" ?>
-     <?php // include "view/ViewAddNewKPIS.php" ?>
-     <?php // include "view/ViewReadMoreForProject.php" ?>
+
+
+
+   <?php  include "view/ViewLogin.php" ?>
+
 
 </body>
 </html>

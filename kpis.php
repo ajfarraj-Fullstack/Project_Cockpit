@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
+// file  config
+include "include/config.php"; 
+// file  login Controller
+include "controller/KPIsController.php";
+
+?>
+<html>
 <head>
 <?php include "header/include.php" ?>  
 <meta charset="UTF-8">

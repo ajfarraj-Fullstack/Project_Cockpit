@@ -1,3 +1,10 @@
+
+<?php 
+// file  config
+session_start();
+include "include/config.php"; 
+// file  login Controller
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +15,9 @@
 </head>
 
 <body>
-  <?php  include "view/ViewReportForEmployeeUpload.php" ?>
+  <?php include "controller/ReportController.php";?>
+
+<?php  include "view/ViewReportForEmployeeUpload.php" ?>
 
 </body>
 

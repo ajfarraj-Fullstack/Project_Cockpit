@@ -1,77 +1,67 @@
-
 <!--Start for nav bar -->
 <?php include "ViewNavbar.php" ?>
 <!--End for nav bar -->
 
 <div class="d-flex align-items-center gap-2">
 
- <button class="btn btn-primary btn-lg mt-5"
-          data-bs-toggle="modal"
-          data-bs-target="#attachmentsModal2">
+  <button class="btn btn-primary btn-lg mt-5" data-bs-toggle="modal" data-bs-target="#attachmentsModal2">
     عرض مرفقات المشروع
   </button>
- 
+
 </div>
 
-
-
 <div class="table-responsive mt-4">
-    <table class="table align-middle table-bordered text-center">
-      <thead class="table-light">
-        <tr>
-          <th>اسم المشروع</th>
-          <th>KPIs</th>
-          <th>الوصف</th>
-          <th>التكليف</th>
-          <th>الحالة</th>
-          <th>تاريخ البدء</th>
-          <th>تاريخ الانتهاء</th>
-          <th>المرفقات</th>
-          <th> الاجراءت</th>
-        </tr>
-      </thead>
+  <table class="table align-middle table-bordered text-center">
+    <thead class="table-light">
+      <tr>
+        <th>اسم المشروع</th>
+        <th>KPIs</th>
+        <th>الوصف</th>
+        <th>التكليف</th>
+        <th>الحالة</th>
+        <th>تاريخ البدء</th>
+        <th>تاريخ الانتهاء</th>
+        <th>المرفقات</th>
+        <th> الاجراءت</th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <!-- صف 1 -->
-        <tr>
-          <td>مشروع مدينة الأيزو – الحمر</td>
-          <td>الإشراف + التنسيق</td>
-          <td>قيد المتابعة</td>
-          <td><span class="badge text-dark"> احمد فراج</span></td>
-          <td><span class="badge bg-warning text-dark">قيد المراجعة</span></td>
-          <td>2026-01-01</td>
-          <td>2026-03-15</td>
+    <tbody>
+      <!-- صف 1 -->
+      <tr>
+        <td>مشروع مدينة الأيزو – الحمر</td>
+        <td>الإشراف + التنسيق</td>
+        <td>قيد المتابعة</td>
+        <td><span class="badge text-dark"> احمد فراج</span></td>
+        <td><span class="badge bg-warning text-dark">قيد المراجعة</span></td>
+        <td>2026-01-01</td>
+        <td>2026-03-15</td>
 
-          <td><i class="bi bi-paperclip"></i> 3 ملفات</td>
-
-
-
-          <td>
-           
-       
-            <a href="reportemployee.php" class="btn btn-sm btn-outline-secondary">عرض التقرير</a>
-          </td>
+        <td><i class="bi bi-paperclip"></i> 3 ملفات</td>
+        <td>
+          <a href="reportemployee.php" class="btn btn-sm btn-outline-secondary">عرض التقرير</a>
+        </td>
 
 
-        </tr>
+      </tr>
 
-        <!-- صف 2 -->
-        <tr>
-          <td>مشروع مدينة الأيزو – بني كنانة</td>
-          <td>التنسيق مع المقاولين</td>
-          <td>تم التنفيذ جزئيًا</td>
-          <td><span class="badge text-dark"> احمد فراج</span></td>
-          <td><span class="badge bg-warning text-dark">قيد المراجعة</span></td>
-          <td>2026-01-05</td>
-          <td>2026-04-20</td>
-          <td><i class="bi bi-paperclip"></i> 2 ملفات</td>
-          <td>            
-            <a href="view_report.php" class="btn btn-sm btn-outline-secondary">عرض التقرير</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <!-- صف 2 -->
+      <tr>
+        <td>مشروع مدينة الأيزو – بني كنانة</td>
+        <td>التنسيق مع المقاولين</td>
+        <td>تم التنفيذ جزئيًا</td>
+        <td><span class="badge text-dark"> احمد فراج</span></td>
+        <td><span class="badge bg-warning text-dark">قيد المراجعة</span></td>
+        <td>2026-01-05</td>
+        <td>2026-04-20</td>
+        <td><i class="bi bi-paperclip"></i> 2 ملفات</td>
+        <td>
+          <a href="view_report.php" class="btn btn-sm btn-outline-secondary">عرض التقرير</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
 
 <!-- مودال المرفقات للصف 1 -->

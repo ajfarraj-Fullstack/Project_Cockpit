@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
+// file  config
+include "include/config.php"; 
+// file  login Controller
+include "controller/AddTaskFromAdminController.php";
+?>
 
 <head>
   <?php include "header/include.php" ?>
@@ -8,11 +13,7 @@
 </head>
 
 <body>
-  <?php // include "view/ViewLogin.php" ?>
-  <?php //include "view/ViewDashbord.php" ?>
-  <?php  //include "view/ViewTableForEmployee.php" ?>
-  <?php // include "view/ViewAddNewUser.php" ?>
-  <?php // include "view/ViewAddNewKPIS.php" ?>
+
   <?php include "view/ViewReadMoreForProject.php" ?>
 
 </body>

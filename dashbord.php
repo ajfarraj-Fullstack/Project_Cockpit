@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+
+<?php 
+// file  config
+session_start();
+include "include/config.php"; 
+// file  login Controller
+include "controller/ProjectsController.php";
+?>
 <html lang="en">
 
 <head>
@@ -8,12 +15,10 @@
 </head>
 
 <body>
-  <?php // include "view/ViewLogin.php" ?>
+
+    <?php include "view/ViewNavbar.php" ?>
   <?php include "view/ViewDashbord.php" ?>
-  <?php  //include "view/ViewTableForEmployee.php" ?>
-  <?php // include "view/ViewAddNewUser.php" ?>
-  <?php // include "view/ViewAddNewKPIS.php" ?>
-  <?php // include "view/ViewReadMoreForProject.php" ?>
+
 
 </body>
 
